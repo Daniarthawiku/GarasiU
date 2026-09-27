@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarasiU</title>
+    <style>
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+
+        section {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #000000;
+        }
+
+        div {
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #000000;
+        }
+    </style>
+
+</head>
+
+<main>
+    <header>
+        <h1>Welcome to GarasiU</h1>
+        <nav>
+            <link>
+            <a href="index.html">Home</a>
+            <a href="logBBM.html">Log BBM</a>
+            <a href="logService.html">Log Service</a>
+            </link>
+        </nav>
+        <button>+ Add New Vehicle</button>
+        <h3>User Name</h3>
+    </header>
+
+    <section>
+        <div>
+            <h2>Fuel Log Activity</h2>
+            
+            <label for="choose-vehicle">Choose Vehicle:</label>
+            <select id="choose-vehicle" name="vehicle">
+                <option value="lamborghini">Lamborghini Aventador</option>
+                <option value="laferrai">Laferrai</option>
+            </select>
+        </div>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th>Fuel Consumption</th>
+                <th>Operating Cost</th>
+                <th>Monthly Spent</th>
+            </tr>
+            <tr>
+                <td>11.8 km/L</td>
+                <td>Rp 1,000,000/km</td>
+                <td>Rp 30,000,000</td>
+            </tr>
+            <tr>
+                <td>Optimal</td>
+                <td>Stable</td>
+                <td>65.3 Liters Total</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th colspan="8">All Total Fuel Log Consumption</th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <th>Odometer</th>
+                <th>Distance</th>
+                <th>Fuel Type</th>
+                <th>Volume (L)</th>
+                <th>Price (Rp)</th>
+                <th>Efficiency (km/L)</th>
+                <th>Fuel Status</th>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>+200 km</td>
+                <td>Pertamax Turbo</td>
+                <td>32.50 L</td>
+                <td>Rp 1,000,000</td>
+                <td>11.8 km/L</td>
+                <td>Full Tank</td>
+            </tr>
+            <tr>
+                <td>11 Sept 2023</td>
+                <td>142.200 km</td>
+                <td>+200 km</td>
+                <td>Pertamax Turbo</td>
+                <td>32.50 L</td>
+                <td>Rp 1,000,000</td>
+                <td>11.8 km/L</td>
+                <td>Full Tank</td>
+            </tr>
+            <tr>
+                <td>21 Sept 2023</td>
+                <td>142.400 km</td>
+                <td>+200 km</td>
+                <td>Pertamax Turbo</td>
+                <td>32.50 L</td>
+                <td>Rp 1,000,000</td>
+                <td>11.8 km/L</td>
+                <td>Full Tank</td>
+            </tr>
+            <tr>
+                <td>31 Sept 2023</td>
+                <td>142.600 km</td>
+                <td>+200 km</td>
+                <td>Pertamax Turbo</td>
+                <td>32.50 L</td>
+                <td>Rp 1,000,000</td>
+                <td>11.8 km/L</td>
+                <td>Full Tank</td>
+            </tr>
+        </table>
+        <section>
+            <button>Export CSV</button>
+        </section>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GarasiU. All rights reserved.</p>
+    </footer>
+</main>
+
+</html>
