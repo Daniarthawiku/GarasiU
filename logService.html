@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarasiU</title>
+    <style>
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+
+        section {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #000000;
+        }
+
+        div {
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #000000;
+        }
+    </style>
+
+</head>
+
+<main>
+    <header>
+        <h1>Welcome to GarasiU</h1>
+        <nav>
+            <link>
+            <a href="index.html">Home</a>
+            <a href="logBBM.html">Log BBM</a>
+            <a href="logService.html">Log Service</a>
+            </link>
+        </nav>
+        <button>+ Add New Vehicle</button>
+        <h3>User Name</h3>
+    </header>
+
+    <section>
+        <div>
+            <h2>Fuel Log Activity</h2>
+
+            <label for="choose-vehicle">Choose Vehicle:</label>
+            <select id="choose-vehicle" name="vehicle">
+                <option value="lamborghini">Lamborghini Aventador</option>
+                <option value="laferrai">Laferrai</option>
+            </select>
+        </div>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th>Service Summary</th>
+                <th>Recent Service</th>
+                <th>Most Frequently Replaced Component</th>
+            </tr>
+            <tr>
+                <td>Rp 31,000,000</td>
+                <td>12 Sept 2023</td>
+                <td>Engine Oil</td>
+            </tr>
+            <tr>
+                <td>Optimal</td>
+                <td>142.200 km</td>
+                <td>4,000 km remaining</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th colspan="6">All Service Log </th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <th>Odometer</th>
+                <th>Category</th>
+                <th>Replacement Part</th>
+                <th>Workshop Name</th>
+                <th>Price (Rp)</th>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>Maintenance</td>
+                <td>Engine Oil</td>
+                <td>AmbaTuner</td>
+                <td>Rp 1,000,000</td>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>Maintenance</td>
+                <td>Engine Oil</td>
+                <td>AmbaTuner</td>
+                <td>Rp 1,000,000</td>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>Maintenance</td>
+                <td>Engine Oil</td>
+                <td>AmbaTuner</td>
+                <td>Rp 1,000,000</td>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>Maintenance</td>
+                <td>Engine Oil</td>
+                <td>AmbaTuner</td>
+                <td>Rp 1,000,000</td>
+            </tr>
+            <tr>
+                <td>01 Sept 2023</td>
+                <td>142.000 km</td>
+                <td>Maintenance</td>
+                <td>Engine Oil</td>
+                <td>AmbaTuner</td>
+                <td>Rp 1,000,000</td>
+            </tr>
+        </table>
+        <section>
+            <button>Export CSV</button>
+        </section>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GarasiU. All rights reserved.</p>
+    </footer>
+</main>
+
+</html>
