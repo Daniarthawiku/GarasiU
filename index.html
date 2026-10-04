@@ -3,124 +3,232 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GarasiU</title>
+        <title>GarasiU - Dasboard</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <main>
-        <header>
+        <header class="header">
             <h1>Welcome to GarasiU</h1>
             <nav>
-                <link>
-                    <a href="index.html">Home</a>
-                    <a href="logBBM.html">Log BBM</a>
-                    <a href="logService.html">Log Service</a>
-                </link>
+                <a href="index.html">Dashboard</a>
+                <a href="logBBM.html">Log BBM</a>
+                <a href="logService.html">Log Service</a>
             </nav>
-            <button>+ Add New Vehicle</button>
-            <img src="profile.png" alt="user profile picture" width="50" height="50">
+
+            <div>
+                <button>+ Add New Vehicle</button>
+                <img src="profile.png" alt="user profile picture" width="50" height="50">
+            </div>
         </header>
 
-        <section>
+        <section class="hero-home">
+            <span>Vehicle Checkpoint Tracker</span>
             <h2>Halo, User Name!</h2>
-            <p>Your one-stop solution for all your garage needs.</p>
-            <table>
-                <tr>
-                    <th>Your Garage</th>
-                    <th>Components Needing Attention</th>
-                </tr>
-                <tr>
-                    <td>02</td>
-                    <td><b>01</b></td>
-                </tr>
-            </table>
+            <p>Welcome to GarasiU, your ultimate garage management solution. Keep track of your vehicles, fuel consumption, and
+                service history all in one place.</p>
         </section>
 
-        <section>
-            <div>
-                <h2>Lamborghini Aventador</h2>
-                <section>
-                    <table>
-                        <tr>
-                            <th>Current Odometer</th>
-                            <th>Fuel Capacity</th>
-                        </tr>
-                        <tr>
-                            <td>142.000 km</td>
-                            <td>50 L</td>
-                        </tr>
-                        <tr>
-                            <td>Updated 5 days ago</td>
-                            <td>Ron 98</td>
-                        </tr>
-                    </table>
+        <section class="hero-tab">
+            <div class="hero-tab-armada">
+                <span>Vehicle Total</span>
+                <div>
+                    <h2>2</h2>
+                    <p>Units</p>
+                </div>
+                <ul>Lamborghini Aventador</ul>
+                <ul>Laferrari</ul>
+            </div>
+
+            <div class="hero-tab-status">
+                <span>Vehicle Status</span>
+                <div>
+                    <h2>1</h2>
+                    <p>components overdue</p>
+                </div>
+                <article>Lamborghini Aventador: Engine Oil Filter</article>
+            </div>
+
+            <div class="hero-tab-fuelSummary">
+                <span>Fuel Summary</span>
+                <div>
+                    <h2>27.25</h2>
+                    <p>km/L</p>
+                </div>
+                <article>Optimal</article>
+            </div>
+
+            <div class="hero-tab-spendings">
+                <span>Total Spendings</span>
+                <div>
+                    <p>Rp</p>
+                    <h2>450.000</h2>
+                </div>
+                <article>Fuel + Tune Up</article>
+            </div>
+        </section>
+
+        <section class="card-vehicle">
+            <div class="card-vehicle-1">
+                <section class="card-header">
+                    <div class="card-span">
+                        <span class="type">Hypercar</span>
+                        <span class="status">Status: Need Maintenance</span>
+                    </div>
+                    <h2>Lamborghini Aventador (2015)</h2>
+                    <p>6.5-liter naturally aspirated V12 with 7-speed Graziano ISR single-clutch</p>
                 </section>
-                <h3>Component Status</h3>
-                <section>
-                    <table>
-                        <tr>
-                            <th>Engine Oil</th>
-                            <th>Engine Oil Filter</th>
-                            <th>Brake Fluid</th>
-                            <th>Brake Pads</th>
-                        </tr>
-                        <tr>
-                            <td>80%</td>
-                            <td>50%</td>
-                            <td>11%</td>
-                            <td>75%</td>
-                        </tr>
-                    </table>
+
+                <section class="box-section">
+                    <div class="box-odo">
+                        <span>Current Odometer</span>
+                        <div>
+                            <h2>142.500</h2>
+                            <p>km</p>
+                        </div>
+                    </div>
+
+                    <div class="box-fuel">
+                        <span>Fuel Efficiency</span>
+                        <div >
+                            <h2>11.8</h2>
+                            <p>km/L</p>
+                        </div>
+                    </div>
+
+                    <div class="box-cost">
+                        <span>Estimated Cost</span>
+                        <div>
+                            <h2>Rp 12.000</h2>
+                            <p>/km</p>
+                        </div>
+                    </div>
                 </section>
-                <section>
-                    <div>
+
+                <section class="component-list">
+                <span>Component Status</span>
+                    <div class="component-item">
+                        <div class="component-header-1">
+                            <h4>Shell Helix Engine Oil</h4>
+                            <span>OVER: 108% Wear (45 km Off)</span>
+                        </div>
+                
+                        <div class="component-progress-1">
+                            <div class="component-progress-bar-1" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="component-item">
+                        <div class="component-header-2">
+                            <h4>Shell Water coolant</h4>
+                            <span>Optimal: 25% Wear</span>
+                        </div>
+                    
+                        <div class="component-progress-2">
+                            <div class="component-progress-bar-2" style="width: 25%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="component-item">
+                        <div class="component-header-3">
+                            <h4>Brembo Brake Fluid</h4>
+                            <span>Due Soon: 80% Wear</span>
+                        </div>
+                    
+                        <div class="component-progress-3">
+                            <div class="component-progress-bar-3" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="box-footer">
+                    <div class="box-footer-left">
                         <button>Log Service</button>
                         <button>Log Fuel</button>
-                        <button>Update Odometer</button>
                     </div>
+                    <button class="box-footer-right">Update Odometer</button>
                 </section>
             </div>
 
-            <div>
-                <h2>Laferrai</h2>
-                <section>
-                    <table>
-                        <tr>
-                            <th>Current Odometer</th>
-                            <th>Fuel Capacity</th>
-                        </tr>
-                        <tr>
-                            <td>142.000 km</td>
-                            <td>50 L</td>
-                        </tr>
-                        <tr>
-                            <td>Updated 5 days ago</td>
-                            <td>Ron 98</td>
-                        </tr>
-                    </table>
+            <!-- second -->
+            <div class="card-vehicle-2">
+                <section class="card-header-2">
+                    <div class="card-span-2">
+                        <span class="type">Superbike</span>
+                        <span class="status">Status: Healthy</span>
+                    </div>
+                    <h2>Panigale V4R (2020)</h2>
+                    <p>998 cc Desmosedici Stradale R 90° V4</p>
                 </section>
-                <h3>Component Status</h3>
-                <section>
-                    <table>
-                        <tr>
-                            <th>Engine Oil</th>
-                            <th>Engine Oil Filter</th>
-                            <th>Brake Fluid</th>
-                            <th>Brake Pads</th>
-                        </tr>
-                        <tr>
-                            <td>80%</td>
-                            <td>50%</td>
-                            <td>11%</td>
-                            <td>75%</td>
-                        </tr>
-                    </table>
+            
+                <section class="box-section">
+                    <div class="box-odo">
+                        <span>Current Odometer</span>
+                        <div>
+                            <h2>142.500</h2>
+                            <p>km</p>
+                        </div>
+                    </div>
+            
+                    <div class="box-fuel">
+                        <span>Fuel Efficiency</span>
+                        <div>
+                            <h2>11.8</h2>
+                            <p>km/L</p>
+                        </div>
+                    </div>
+            
+                    <div class="box-cost">
+                        <span>Estimated Cost</span>
+                        <div>
+                            <h2>Rp 12.000</h2>
+                            <p>/km</p>
+                        </div>
+                    </div>
                 </section>
-                <section>
-                    <div>
+            
+                <section class="component-list">
+                    <span>Component Status</span>
+                    <div class="component-item">
+                        <div class="component-header-1-2">
+                            <h4>Shell Helix Engine Oil</h4>
+                            <span>Optimal: 40% Wear</span>
+                        </div>
+            
+                        <div class="component-progress-1-2">
+                            <div class="component-progress-bar-1-2" style="width: 40%;"></div>
+                        </div>
+                    </div>
+            
+                    <div class="component-item">
+                        <div class="component-header-2-2">
+                            <h4>Shell Water coolant</h4>
+                            <span>Optimal: 40% Wear</span>
+                        </div>
+            
+                        <div class="component-progress-2-2">
+                            <div class="component-progress-bar-2-2" style="width: 40%;"></div>
+                        </div>
+                    </div>
+            
+                    <div class="component-item">
+                        <div class="component-header-3-2">
+                            <h4>Brembo Brake Fluid</h4>
+                            <span>Optimal: 40% Wear</span>
+                        </div>
+            
+                        <div class="component-progress-3-2">
+                            <div class="component-progress-bar-3-2" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="box-footer">
+                    <div class="box-footer-left">
                         <button>Log Service</button>
                         <button>Log Fuel</button>
-                        <button>Update Odometer</button>
                     </div>
+                    <button class="box-footer-right">Update Odometer</button>
                 </section>
             </div>
         </section>
