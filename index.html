@@ -1,240 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GarasiU - Dasboard</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="id">
 
-    <main>
-        <header class="header">
-            <h1>Welcome to GarasiU</h1>
-            <nav>
-                <a href="index.html">Dashboard</a>
-                <a href="logBBM.html">Log BBM</a>
-                <a href="logService.html">Log Service</a>
-            </nav>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARASIU ApexLog — Autentikasi Pemilik Kendaraan</title>
 
-            <div>
-                <button>+ Add New Vehicle</button>
-                <img src="profile.png" alt="user profile picture" width="50" height="50">
-            </div>
-        </header>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
 
-        <section class="hero-home">
-            <span>Vehicle Checkpoint Tracker</span>
-            <h2>Halo, User Name!</h2>
-            <p>Welcome to GarasiU, your ultimate garage management solution. Keep track of your vehicles, fuel consumption, and
-                service history all in one place.</p>
-        </section>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <section class="hero-tab">
-            <div class="hero-tab-armada">
-                <span>Vehicle Total</span>
-                <div>
-                    <h2>2</h2>
-                    <p>Units</p>
+<body>
+
+    <main class="container">
+        <div class="login-card">
+
+            <div class="card-header">
+                <div class="badge-group">
+                    <span class="label">Welcome Back to Garasiu</span>
                 </div>
-                <ul>Lamborghini Aventador</ul>
-                <ul>Laferrari</ul>
             </div>
 
-            <div class="hero-tab-status">
-                <span>Vehicle Status</span>
-                <div>
-                    <h2>1</h2>
-                    <p>components overdue</p>
+            <div class="card-title">
+                <h2>Enter your Garage</h2>
+                <p>Access scheduled service history, fuel consumption analytics, and parts wear monitoring.</p>
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="identifier">Fill your Email</label>
+                    <div class="input-wrapper">
+                        <span class="material-symbols-outlined input-icon">alternate_email</span>
+                        <input id="identifier" name="identifier" type="email" placeholder="karlbenz@gmail.com"
+                            required>
+                    </div>
                 </div>
-                <article>Lamborghini Aventador: Engine Oil Filter</article>
-            </div>
 
-            <div class="hero-tab-fuelSummary">
-                <span>Fuel Summary</span>
-                <div>
-                    <h2>27.25</h2>
-                    <p>km/L</p>
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="password">Fill your Password</label>
+                        <a href="#" class="forgot-link">FORGOT?</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <span class="material-symbols-outlined input-icon">lock</span>
+                        <input id="password" name="password" type="password" placeholder="••••••••••••" required>
+                        <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility()">
+                            <span class="material-symbols-outlined" id="togglePasswordIcon">visibility</span>
+                        </button>
+                    </div>
                 </div>
-                <article>Optimal</article>
-            </div>
 
-            <div class="hero-tab-spendings">
-                <span>Total Spendings</span>
-                <div>
-                    <p>Rp</p>
-                    <h2>450.000</h2>
+                <div class="remember-row">
+                    <label class="checkbox-container">
+                        <input id="rememberDevice" type="checkbox">
+                        <span class="checkbox-text">Remember Me</span>
+                    </label>
                 </div>
-                <article>Fuel + Tune Up</article>
+
+                <button class="btn-primary" type="submit">
+                    <span class="material-symbols-outlined">login</span>
+                    <span>Get In</span>
+                </button>
+            </form>
+
+
+            <div class="card-footer">
+                <p>Didnt had an account? <a href="#">Create New</a></p>
             </div>
-        </section>
-
-        <section class="card-vehicle">
-            <div class="card-vehicle-1">
-                <section class="card-header">
-                    <div class="card-span">
-                        <span class="type">Hypercar</span>
-                        <span class="status">Status: Need Maintenance</span>
-                    </div>
-                    <h2>Lamborghini Aventador (2015)</h2>
-                    <p>6.5-liter naturally aspirated V12 with 7-speed Graziano ISR single-clutch</p>
-                </section>
-
-                <section class="box-section">
-                    <div class="box-odo">
-                        <span>Current Odometer</span>
-                        <div>
-                            <h2>142.500</h2>
-                            <p>km</p>
-                        </div>
-                    </div>
-
-                    <div class="box-fuel">
-                        <span>Fuel Efficiency</span>
-                        <div >
-                            <h2>11.8</h2>
-                            <p>km/L</p>
-                        </div>
-                    </div>
-
-                    <div class="box-cost">
-                        <span>Estimated Cost</span>
-                        <div>
-                            <h2>Rp 12.000</h2>
-                            <p>/km</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="component-list">
-                <span>Component Status</span>
-                    <div class="component-item">
-                        <div class="component-header-1">
-                            <h4>Shell Helix Engine Oil</h4>
-                            <span>OVER: 108% Wear (45 km Off)</span>
-                        </div>
-                
-                        <div class="component-progress-1">
-                            <div class="component-progress-bar-1" style="width: 100%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="component-item">
-                        <div class="component-header-2">
-                            <h4>Shell Water coolant</h4>
-                            <span>Optimal: 25% Wear</span>
-                        </div>
-                    
-                        <div class="component-progress-2">
-                            <div class="component-progress-bar-2" style="width: 25%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="component-item">
-                        <div class="component-header-3">
-                            <h4>Brembo Brake Fluid</h4>
-                            <span>Due Soon: 80% Wear</span>
-                        </div>
-                    
-                        <div class="component-progress-3">
-                            <div class="component-progress-bar-3" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="box-footer">
-                    <div class="box-footer-left">
-                        <button>Log Service</button>
-                        <button>Log Fuel</button>
-                    </div>
-                    <button class="box-footer-right">Update Odometer</button>
-                </section>
-            </div>
-
-            <!-- second -->
-            <div class="card-vehicle-2">
-                <section class="card-header-2">
-                    <div class="card-span-2">
-                        <span class="type">Superbike</span>
-                        <span class="status">Status: Healthy</span>
-                    </div>
-                    <h2>Panigale V4R (2020)</h2>
-                    <p>998 cc Desmosedici Stradale R 90° V4</p>
-                </section>
-            
-                <section class="box-section">
-                    <div class="box-odo">
-                        <span>Current Odometer</span>
-                        <div>
-                            <h2>142.500</h2>
-                            <p>km</p>
-                        </div>
-                    </div>
-            
-                    <div class="box-fuel">
-                        <span>Fuel Efficiency</span>
-                        <div>
-                            <h2>11.8</h2>
-                            <p>km/L</p>
-                        </div>
-                    </div>
-            
-                    <div class="box-cost">
-                        <span>Estimated Cost</span>
-                        <div>
-                            <h2>Rp 12.000</h2>
-                            <p>/km</p>
-                        </div>
-                    </div>
-                </section>
-            
-                <section class="component-list">
-                    <span>Component Status</span>
-                    <div class="component-item">
-                        <div class="component-header-1-2">
-                            <h4>Shell Helix Engine Oil</h4>
-                            <span>Optimal: 40% Wear</span>
-                        </div>
-            
-                        <div class="component-progress-1-2">
-                            <div class="component-progress-bar-1-2" style="width: 40%;"></div>
-                        </div>
-                    </div>
-            
-                    <div class="component-item">
-                        <div class="component-header-2-2">
-                            <h4>Shell Water coolant</h4>
-                            <span>Optimal: 40% Wear</span>
-                        </div>
-            
-                        <div class="component-progress-2-2">
-                            <div class="component-progress-bar-2-2" style="width: 40%;"></div>
-                        </div>
-                    </div>
-            
-                    <div class="component-item">
-                        <div class="component-header-3-2">
-                            <h4>Brembo Brake Fluid</h4>
-                            <span>Optimal: 40% Wear</span>
-                        </div>
-            
-                        <div class="component-progress-3-2">
-                            <div class="component-progress-bar-3-2" style="width: 40%;"></div>
-                        </div>
-                    </div>
-                </section>
-            
-                <section class="box-footer">
-                    <div class="box-footer-left">
-                        <button>Log Service</button>
-                        <button>Log Fuel</button>
-                    </div>
-                    <button class="box-footer-right">Update Odometer</button>
-                </section>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 GarasiU. All rights reserved.</p>
-        </footer>
+        </div>
     </main>
+</body>
 </html>
