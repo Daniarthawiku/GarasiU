@@ -1,0 +1,387 @@
+/* --- VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+    --canvas-void: #0A0D12;
+    --surface-base: #0D1117;
+    --surface-raised: #161B22;
+    
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    
+    --action-primary: #38BDF8;
+    --status-danger: #EF4444;
+    --status-success: #10B981;
+    --status-warning: #f59e0b;
+    
+    --border-subtle: #263040;
+
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--canvas-void);
+    background-image: linear-gradient(to right, rgba(38, 48, 64, 0.25) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(38, 48, 64, 0.25) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+body, p, article {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em; 
+}
+
+span {
+    font-family: var(--font-mono);
+}
+
+main {
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: var(--surface-base);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 12px 56px;
+}
+
+.header nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: all 0.4s;
+}
+
+.header nav a:hover {
+    color: var(--action-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header button {
+    background-color: var(--action-primary);
+    color: var(--canvas-void);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header img {
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero-home {
+    margin: 32px 56px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 24px;
+}
+
+.hero-home span {
+    display: inline-flex;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px; 
+    color: var(--action-primary);
+    background-color: rgb(56 189 248 / 10%); 
+    border: 1px solid rgb(56 189 248 / 20%);
+}
+
+.hero-home h2 {
+    font-size: 32px;
+    margin: 8px 0 4px;
+}
+
+.hero-home p {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* --- HERO TABS (Grouped CSS) --- */
+.hero-tab {
+    display: flex;
+    gap: 16px;
+    margin: 32px 56px;
+    justify-content: space-between;
+}
+
+/* Menggabungkan styling 4 kotak hero tab */
+.hero-tab > div {
+    background-color: var(--surface-raised);
+    border: 2px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 16px;
+    width: 25vw;
+    min-height: 150px;
+}
+
+.hero-tab-status {
+    box-shadow: 0 0 12px var(--status-danger);
+}
+
+/* Styling konten di dalam Hero Tab */
+.hero-tab > div > span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+.hero-tab-status > span { color: var(--status-danger); }
+
+.hero-tab > div > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-tab > div > div > h2 { font-size: 32px; }
+.hero-tab-status h2 { color: var(--status-danger); }
+
+.hero-tab > div > div > p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+.hero-tab-fuelSummary > div > p { color: var(--action-primary); }
+
+.hero-tab ul, .hero-tab article {
+    font-size: 16px;
+}
+.hero-tab-armada ul { color: var(--action-primary); }
+.hero-tab-fuelSummary article, .hero-tab-spendings article { color: var(--status-success); }
+
+
+/* --- VEHICLE CARDS (Grouped CSS) --- */
+.card-vehicle {
+    display: flex;
+    padding: 0 56px;
+    justify-content: space-between;
+}
+
+/* Menggabungkan card-vehicle-1 dan 2 */
+[class^="card-vehicle-"] {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-raised);
+    border: 2px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 24px;
+    width: 45vw;
+    gap: 16px;
+}
+
+[class^="card-vehicle-"] > section > p { 
+    color: var(--text-secondary);
+}
+
+[class^="card-header"] {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+[class^="card-span"] {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+[class^="card-span"] span {
+    display: inline-flex;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px; 
+}
+
+/* Badge Modifiers */
+.type {
+    color: var(--action-primary);
+    background-color: rgb(56 189 248 / 10%); 
+    border: 1px solid rgb(56 189 248 / 20%);
+}
+.card-span .status {
+    color: var(--status-danger);
+    background-color: rgb(239 68 68 / 10%); 
+    border: 1px solid rgb(239 68 68 / 20%);
+}
+.card-span-2 .status {
+    color: var(--status-success);
+    background-color: rgb(16 185 129 / 10%); 
+    border: 1px solid rgb(16 185 129 / 20%);
+}
+
+/* --- BOX SECTION (Odo, Fuel, Cost) --- */
+.box-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--surface-base);
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 2px solid var(--border-subtle);
+}
+
+.box-section > div > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.box-section span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.box-section h2, .box-section p { color: var(--action-primary); }
+.box-section h2 { font-size: 18px; }
+
+
+/* --- COMPONENT STATUS PROGRESS --- */
+.component-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.component-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    background: rgb(31 38 51 / 80%); 
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+}
+
+/* Menggabungkan semua component-header */
+[class^="component-header"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+[class^="component-header"] span {
+    display: inline-flex;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px; 
+}
+
+/* Menggabungkan lintasan (track) progress bar */
+[class^="component-progress-"]:not([class*="bar"]) {
+    width: 100%;
+    height: 8px;
+    background: var(--canvas-void);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Animasi & dasar Bar Progress */
+[class*="progress-bar"] {
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Pewarnaan Status Dinamis berdasarkan class HTML Anda */
+/* Status Danger (Merah) */
+.component-header-1 span { color: var(--status-danger); background-color: var(--status-danger-bg); border: 1px solid rgb(239 68 68 / 20%); }
+.component-progress-1 { box-shadow: 0 0 18px var(--status-danger); }
+.component-progress-bar-1 { background: var(--status-danger); }
+
+/* Status Success (Hijau) */
+.component-header-2 span, .component-header-1-2 span, .component-header-2-2 span, .component-header-3-2 span { 
+    color: var(--status-success); background-color: rgb(16 185 129 / 10%); border: 1px solid rgb(16 185 129 / 20%); 
+}
+.component-progress-bar-2, .component-progress-bar-1-2, .component-progress-bar-2-2, .component-progress-bar-3-2 { background: var(--status-success); }
+
+/* Status Warning (Kuning/Orange) */
+.component-header-3 span { color: var(--status-warning); background-color: rgb(245 158 11 / 10%); border: 1px solid rgb(245 158 11 / 20%); }
+.component-progress-bar-3 { background: var(--status-warning); }
+
+
+/* --- CARD FOOTER & BUTTONS --- */
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 12px;
+}
+
+.box-footer button {
+    font-family: var(--font-heading);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.box-footer-left button {
+    background-color: rgb(31 38 51);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+}
+
+.box-footer-right {
+    color: var(--action-primary);
+    background-color: rgb(56 189 248 / 10%); 
+    border: 1px solid rgb(56 189 248 / 20%);
+}
+
+/* --- PAGE FOOTER --- */
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 12px 56px;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 48px;
+    color: var(--text-muted);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 768px) {
+    .header { flex-direction: column; padding: 16px; gap: 16px; text-align: center; }
+    .header nav { flex-direction: column; width: 100%; gap: 12px; }
+    .header div { justify-content: center; width: 100%; }
+    
+    .hero-home, .hero-tab { margin: 24px 16px; }
+    .hero-tab { flex-direction: column; }
+    .hero-tab > div { width: 100%; }
+    
+    .card-vehicle { flex-direction: column; padding: 16px; gap: 24px; }
+    [class^="card-vehicle-"] { width: 100%; }
+    
+    .box-section { flex-direction: column; align-items: flex-start; gap: 12px; }
+    
+    .box-footer, .box-footer-left { flex-direction: column; width: 100%; gap: 8px;}
+    .box-footer-left button, .box-footer-right { width: 100%; }
+}
