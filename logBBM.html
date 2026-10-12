@@ -4,120 +4,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GarasiU</title>
-
+    <title>GarasiU - Log BBM</title>
+    <link rel="stylesheet" href="styleB.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 </head>
 
-<main>
-    <header>
-        <h1>Welcome to GarasiU</h1>
-        <nav>
-            <link>
-            <a href="index.html">Home</a>
-            <a href="logBBM.html">Log BBM</a>
-            <a href="logService.html">Log Service</a>
-            </link>
-        </nav>
-        <button>+ Add New Vehicle</button>
-        <img src="profile.png" alt="user profile picture" width="50" height="50">
-    </header>
+<body>
+    <main>
+        <header class="header">
+            <h2>Welcome to GarasiU</h2>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="logBBM.html">Log BBM</a>
+                <a href="logService.html">Log Service</a>
+            </nav>
+            <div>
+                <button>+ Add New Vehicle</button>
+                <img src="docs/img/profile.png" alt="user profile picture" width="50" height="50">
+            </div>
+        </header>
 
-    <section>
-        <div>
-            <h2>Fuel Log Activity</h2>
-            
-            <label for="choose-vehicle">Choose Vehicle:</label>
-            <select id="choose-vehicle" name="vehicle">
-                <option value="lamborghini">Lamborghini Aventador</option>
-                <option value="laferrai">Laferrai</option>
-            </select>
+        <div class="main-content-wrapper">
+            <section class="bbm-hero">
+                <div class="hero-text">
+                    <h2>Fuel Analytics</h2>
+                    <p>Spot-on fuel tracking by full-to-full stats and quick odo check-ins</p>
+                </div>
+                
+                <div class="hero-controls">
+                    <div class="vehicle-selector-wrapper">
+                        <label>Available Vehicle</label>
+                        <div class="select-box">
+                            <select id="vehicleSelector">
+                                <option selected value="lamAv">Lamborghini Aventador (2015)</option>
+                                <option value="panV4">Panigale V4R (2020)</option>
+                            </select>
+                            <span class="material-symbols-outlined icon-arrow">unfold_more</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-action-primary" onclick="openModal()">
+                        <span class="material-symbols-outlined fill-icon">local_gas_station</span>
+                        + Update Fuel
+                    </button>
+                </div>
+            </section>
+
+            <section class="bbm-metrics">
+                <!-- Card 1 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Fuel Summary</span>
+                        <div class="icon-box icon-cyan"><span class="material-symbols-outlined">speed</span></div>
+                    </div>
+                    <div class="metric-body">
+                        <h2>11.8 <span>km / Liter</span></h2>
+                        <p>Based on fuel tracking</p>
+                    </div>
+                    <div class="metric-footer">
+                        <div class="status-badge optimal">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            Optimal 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Operating Costs</span>
+                        <div class="icon-box icon-warning"><span class="material-symbols-outlined">payments</span></div>
+                    </div>
+                    <div class="metric-body">
+                        <h2>Rp 1.150 <span>/ km</span></h2>
+                        <p>Fuel cost driven</p>
+                    </div>
+                    <div class="metric-footer">
+                        <div class="status-badge neutral">
+                            <span class="material-symbols-outlined warning-text">trending_up</span>
+                            Stable (+Rp 15/km since last month)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>This Month Expenses</span>
+                        <div class="icon-box icon-optimal"><span class="material-symbols-outlined">receipt_long</span></div>
+                    </div>
+                    <div class="metric-body">
+                        <h2>Rp 850.000</h2>
+                        <p>3 Times fillin this month</p>
+                    </div>
+                    <div class="metric-footer between">
+                        <div class="status-badge neutral cyan-text">
+                            <span class="material-symbols-outlined">water_drop</span>
+                            65.3 liters filled in total
+                        </div>
+                        <span class="date-text">Sep 2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bbm-chart-section">
+                <div class="chart-header">
+                    <div>
+                        <div class="chart-title-group">
+                            <h2>Fuel Efficiency Trend</h2>
+                        </div>
+                        <p>How your actual mileage stacks up against factory claims</p>
+                    </div>
+                    <div class="chart-filters">
+                        <button class="active">Last 30 days</button>
+                        <button>3 Month</button>
+                        <button>All</button>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="y-axis">
+                        <span>13 km/L</span>
+                        <span>12 km/L</span>
+                        <span>11 km/L</span>
+                        <span>10 km/L</span>
+                    </div>
+                    <div class="svg-wrapper">
+                        <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 800 220" style="width:100%; height:100%;">
+                            <line stroke="#263040" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="800" y1="5" y2="5"></line>
+                            <line stroke="#263040" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="800" y1="75" y2="75"></line>
+                            <line stroke="#263040" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="800" y1="145" y2="145"></line>
+                            <line stroke="#263040" stroke-width="1" x1="0" x2="800" y1="215" y2="215"></line>
+                        </svg>
+                    </div>
+                    <div class="x-axis">
+                        <span style="width: 80px; text-align: left;">28 Jul</span>
+                        <span style="width: 80px; text-align: center;">10 Agu</span>
+                        <span style="width: 80px; text-align: center;">25 Agu</span>
+                        <span style="width: 80px; text-align: center;">12 Sep</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bbm-table-section">
+                <div class="table-header">
+                    <div>
+                        <div class="table-title-group">
+                            <h2>Fuel Log History</h2>
+                        </div>
+                        <p>Back-to-back fuel-up logs that crunch your exact mileage</p>
+                    </div>
+                    <div class="table-actions">
+                        <div class="table-filters">
+                            <button class="active">ALL (5)</button>
+                            <button>Only Full-Tank</button>
+                        </div>
+                        <button class="btn-export">
+                            <span class="material-symbols-outlined">file_download</span>
+                            Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="bbm-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Odometer</th>
+                                <th>Mileage</th>
+                                <th>Fuel Type</th>
+                                <th class="text-right">Volume (L)</th>
+                                <th class="text-right">Price (Rp)</th>
+                                <th class="text-right">Efficiency</th>
+                                <th class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="primary-text bold">26 Sep 2026</td>
+                                <td class="primary-text">142.850 km</td>
+                                <td><span class="dist-badge">+350 km</span></td>
+                                <td><span class="fuel-badge"><span class="dot-accent"></span> Pertamax RON 92</span></td>
+                                <td class="text-right primary-text bold">32.50 L</td>
+                                <td class="text-right primary-text">Rp 422.500</td>
+                                <td class="text-right"><span class="bold">10.77</span> <span class="muted-text">km/L</span></td>
+                                <td class="text-center"><span class="status-tank optimal"><span class="material-symbols-outlined">check</span> Full Tank</span></td>
+                            </tr>
+                            <tr>
+                                <td>12 Sep 2026</td>
+                                <td>142.500 km</td>
+                                <td><span class="dist-badge">+380 km</span></td>
+                                <td><span class="fuel-badge"><span class="dot-accent"></span> Pertamax RON 92</span></td>
+                                <td class="text-right primary-text bold">31.80 L</td>
+                                <td class="text-right primary-text">Rp 413.400</td>
+                                <td class="text-right"><span class="bold optimal-text">11.95</span> <span class="muted-text">km/L</span></td>
+                                <td class="text-center"><span class="status-tank optimal"><span class="material-symbols-outlined">check</span> Full Tank</span></td>
+                            </tr>
+                            <tr>
+                                <td>25 Aug 2026</td>
+                                <td>142.120 km</td>
+                                <td><span class="dist-badge">+365 km</span></td>
+                                <td><span class="fuel-badge"><span class="dot-accent"></span> Pertamax RON 92</span></td>
+                                <td class="text-right primary-text bold">30.50 L</td>
+                                <td class="text-right primary-text">Rp 396.500</td>
+                                <td class="text-right"><span class="bold optimal-text">11.97</span> <span class="muted-text">km/L</span></td>
+                                <td class="text-center"><span class="status-tank optimal"><span class="material-symbols-outlined">check</span> Full Tank</span></td>
+                            </tr>
+                            <tr>
+                                <td>10 Aug 2026</td>
+                                <td>141.755 km</td>
+                                <td><span class="dist-badge">+340 km</span></td>
+                                <td><span class="fuel-badge"><span class="dot-accent"></span> Pertamax RON 92</span></td>
+                                <td class="text-right primary-text bold">29.80 L</td>
+                                <td class="text-right primary-text">Rp 387.400</td>
+                                <td class="text-right"><span class="bold primary-text">11.41</span> <span class="muted-text">km/L</span></td>
+                                <td class="text-center"><span class="status-tank optimal"><span class="material-symbols-outlined">check</span> Full Tank</span></td>
+                            </tr>
+                            <tr>
+                                <td>28 Jul 2026</td>
+                                <td>141.415 km</td>
+                                <td><span class="dist-badge">+375 km</span></td>
+                                <td><span class="fuel-badge"><span class="dot-warning"></span> Pertalite RON 90</span></td>
+                                <td class="text-right primary-text bold">33.20 L</td>
+                                <td class="text-right primary-text">Rp 332.000</td>
+                                <td class="text-right"><span class="bold primary-text">11.30</span> <span class="muted-text">km/L</span></td>
+                                <td class="text-center"><span class="status-tank optimal"><span class="material-symbols-outlined">check</span> Full Tank</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-footer">
+                   
+                    <div class="pagination">
+                        <span>Showing 5 from 5 history log</span>
+                        <div class="page-controls">
+                            <button class="disabled">«</button>
+                            <button class="active">1</button>
+                            <button class="disabled">»</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <section>
-        <table>
-            <tr>
-                <th>Fuel Consumption</th>
-                <th>Operating Cost</th>
-                <th>Monthly Spent</th>
-            </tr>
-            <tr>
-                <td>11.8 km/L</td>
-                <td>Rp 1,000,000/km</td>
-                <td>Rp 30,000,000</td>
-            </tr>
-            <tr>
-                <td>Optimal</td>
-                <td>Stable</td>
-                <td>65.3 Liters Total</td>
-            </tr>
-        </table>
-    </section>
-
-    <section>
-        <table>
-            <tr>
-                <th colspan="8">All Total Fuel Log Consumption</th>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <th>Odometer</th>
-                <th>Distance</th>
-                <th>Fuel Type</th>
-                <th>Volume (L)</th>
-                <th>Price (Rp)</th>
-                <th>Efficiency (km/L)</th>
-                <th>Fuel Status</th>
-            </tr>
-            <tr>
-                <td>01 Sept 2023</td>
-                <td>142.000 km</td>
-                <td>+200 km</td>
-                <td>Pertamax Turbo</td>
-                <td>32.50 L</td>
-                <td>Rp 1,000,000</td>
-                <td>11.8 km/L</td>
-                <td>Full Tank</td>
-            </tr>
-            <tr>
-                <td>11 Sept 2023</td>
-                <td>142.200 km</td>
-                <td>+200 km</td>
-                <td>Pertamax Turbo</td>
-                <td>32.50 L</td>
-                <td>Rp 1,000,000</td>
-                <td>11.8 km/L</td>
-                <td>Full Tank</td>
-            </tr>
-            <tr>
-                <td>21 Sept 2023</td>
-                <td>142.400 km</td>
-                <td>+200 km</td>
-                <td>Pertamax Turbo</td>
-                <td>32.50 L</td>
-                <td>Rp 1,000,000</td>
-                <td>11.8 km/L</td>
-                <td>Full Tank</td>
-            </tr>
-            <tr>
-                <td>31 Sept 2023</td>
-                <td>142.600 km</td>
-                <td>+200 km</td>
-                <td>Pertamax Turbo</td>
-                <td>32.50 L</td>
-                <td>Rp 1,000,000</td>
-                <td>11.8 km/L</td>
-                <td>Full Tank</td>
-            </tr>
-        </table>
-        <section>
-            <button>Export CSV</button>
-        </section>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 GarasiU. All rights reserved.</p>
-    </footer>
-</main>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span class="logo-text">GARASIU</span>
+                <span class="divider">|</span>
+                <p>&copy; 2026 GARASIU ApexLog Automotive Telemetry & Service Passport Systems.</p>
+            </div>
+        </footer>
+    </main>
+</body>
 
 </html>

@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarasiU - Dashboard</title>
     <link rel="stylesheet" href="styleD.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <main>
         <!-- Header -->
         <header class="header">
-            <h1>Welcome to GarasiU</h1>
+            <h2>Welcome to GarasiU</h2>
             <nav>
-                <a href="index.html">Dashboard</a>
+                <a href="dashboard.html">Dashboard</a>
                 <a href="logBBM.html">Log BBM</a>
                 <a href="logService.html">Log Service</a>
             </nav>
 
             <div>
                 <button>+ Add New Vehicle</button>
-                <img src="profile.png" alt="user profile picture" width="50" height="50">
+                <img src="docs/img/profile.png" alt="user profile picture" width="50" height="50">
             </div>
         </header>
 
@@ -33,43 +36,74 @@
                 consumption, and service history all in one place.</p>
         </section>
 
-        <!-- Hero Tabs Metrik -->
-        <section class="hero-tab">
-            <div class="hero-tab-armada">
-                <span>Vehicle Total</span>
-                <div>
-                    <h2>2</h2>
-                    <p>Units</p>
+        <!-- dashboar metric -->
+        <section class="bbm-metrics">
+            <!-- Card 1 -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span>VEHICLE TOTAL</span>
+                    <div class="icon-box icon-cyan"><span class="material-symbols-outlined">directions_car</span></div>
                 </div>
-                <ul>Lamborghini Aventador</ul>
-                <ul>Laferrari</ul>
+                <div class="metric-body">
+                    <h2>2 <span>Units</span></h2>
+                </div>
+                <div class="metric-footer">
+                    <div class="status-badge neutral">
+                        <span class="material-symbols-outlined">directions_car</span>
+                        1 Hypercar and 1 Superbike
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Card 2 -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span>VEHICLE STATUS</span>
+                    <div class="icon-box icon-danger"><span class="material-symbols-outlined">warning</span></div>
+                </div>
+                <div class="metric-body">
+                    <h2 class="danger-text">1 <span>Components Overdue</span></h2>
+                </div>
+                <div class="metric-footer">
+                    <div class="status-badge danger">
+                        <span class="material-symbols-outlined">warning</span>
+                        Lamborghini Aventador: Engine Oil Filter
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Card 3 -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span>FUEL SUMMARY</span>
+                    <div class="icon-box icon-cyan"><span class="material-symbols-outlined">local_gas_station</span></div>
+                </div>
+                <div class="metric-body">
+                    <h2>27.15 <span>km/L</span></h2>
+                </div>
+                <div class="metric-footer between">
+                    <div class="status-badge optimal">
+                        <span class="material-symbols-outlined">local_gas_station</span> Standard
+                            Consumption
+                    </div>
+                </div>
             </div>
 
-            <div class="hero-tab-status">
-                <span>Vehicle Status</span>
-                <div>
-                    <h2>1</h2>
-                    <p>components overdue</p>
+            <!-- Card 4 -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span>TOTAL SPENDINGS</span>
+                    <div class="icon-box icon-cyan"><span class="material-symbols-outlined">receipt_long</span></div>
                 </div>
-                <article>Lamborghini Aventador: Engine Oil Filter</article>
-            </div>
-
-            <div class="hero-tab-fuelSummary">
-                <span>Fuel Summary</span>
-                <div>
-                    <h2>27.25</h2>
-                    <p>km/L</p>
+                <div class="metric-body">
+                    <h2><span style="font-size: 16px; margin-right:-4px;">Rp</span> 450.000</h2>
                 </div>
-                <article>Optimal</article>
-            </div>
-
-            <div class="hero-tab-spendings">
-                <span>Total Spendings</span>
-                <div>
-                    <p>Rp</p>
-                    <h2>450.000</h2>
+                <div class="metric-footer between">
+                    <div class="status-badge optimal">
+                        <span class="material-symbols-outlined">receipt_long</span>water_drop</span>
+                        Fuel + Tune Up
+                    </div>
                 </div>
-                <article>Fuel + Tune Up</article>
             </div>
         </section>
 
@@ -238,8 +272,12 @@
         </section>
 
         <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 GarasiU. All rights reserved.</p>
+        <footer class="footer">
+            <div class="footer-left">
+                <span class="logo-text">GARASIU</span>
+                <span class="divider">|</span>
+                <p>&copy; 2026 GARASIU ApexLog Automotive Telemetry & Service Passport Systems.</p>
+            </div>
         </footer>
     </main>
 </body>
